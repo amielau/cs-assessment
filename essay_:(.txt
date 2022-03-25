@@ -1,0 +1,37 @@
+INSERT 	        APPEND	      SIZE
+1.254291875 s 	2.759959 ms	  Extra Large Arr
+9.91575 ms	    650.583 μs	  Large Arr
+195.542 μs	    123.458 μs	  Medium Arr
+35.791 μs	    78.166 μs	  Small Arr
+26.084 μs	    69.625 μs	  Tiny Arr
+
+CONVERTED TIME MEASURES:
+INSERT 	        APPEND	      SIZE              DIFFERENCE        FASTER
+1254291.875 μs 	2759.959 μs	  Extra Large Arr   1,251,531.91 μs   Append
+9915.75	μs      650.583 μs	  Large Arr         9265.167 μs       Append
+195.542 μs	    123.458 μs	  Medium Arr        72.092            Append
+35.791 μs	    78.166 μs	  Small Arr         42.375            Insert
+26.084 μs	    69.625 μs	  Tiny Arr          43.541            Insert
+
+PARAGRAPH/ESSAY 
+    The Append function ended up being faster in most cases, except in the cases
+    where the arrays were small. As the array size increased, so did the execution
+    time of each function, however, the Insert function became exponentially slower 
+    each time the array size increased. This means that the Append function has a 
+    better time complexity. 
+
+        On another note, if we are speaking in terms of Omicron
+    notation, the two functions have the same time/runtime complexity: O(n). This 
+    is because the time complexity of each function is reliant on the size of the 
+    array, so while the Append function may run faster, the technnical time complexity 
+    is the same.
+
+        It would make sense for the Append function to have the better time complexity 
+    as it uses .push() as opposed to .unshift(), which is what the Insert function 
+    uses. The reason .push() has a better time complexity is that it chains
+    values to the end of the array where .unshift() adds values to the front. 
+    Consequentially, .unshift() has to move every other value already in the array 
+    down a position in order to place the value it is holding at the front. This
+    heavily impacts the time complexity of the function. 
+
+
